@@ -6,4 +6,7 @@
     <string name="button_one_min">1 min</string>
     <string name="button_one_day">1 Day</string>
     <string name="button_four_day">4 Days</string>
+    <string name="add_word_by_text">Text</string>
+    <string name="add_word_by_voice">Voice</string>
+
 </resources>

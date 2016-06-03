@@ -23,13 +23,39 @@
 
     <include layout="@layout/content_main" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/add_floating_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_input_add"
-        app:backgroundTint="@android:color/holo_blue_dark" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        app:fab_addButtonColorNormal="@color/color_white"
+        app:fab_addButtonColorPressed="@color/color_white_pressed"
+        app:fab_addButtonPlusIconColor="@color/color_half_black"
+        app:fab_labelStyle="@style/menu_labels_style"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_by_text_fl_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/color_white"
+            app:fab_colorPressed="@color/color_white_pressed"
+            app:fab_title="@string/add_word_by_text"
+            android:src="@drawable/abc_ratingbar_small_material" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_by_voice_fl_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/color_white"
+            app:fab_colorPressed="@color/color_white_pressed"
+            app:fab_title="@string/add_word_by_voice"
+            android:src="@drawable/abc_ratingbar_small_material" />
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
 </android.support.design.widget.CoordinatorLayout>
