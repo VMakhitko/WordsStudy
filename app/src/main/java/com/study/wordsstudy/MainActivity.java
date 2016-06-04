@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        /*TODO: Correct handle fragment transaction while rotate*/
         showWordFragment = new ShowWordFragment();
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_conteiner, showWordFragment);
