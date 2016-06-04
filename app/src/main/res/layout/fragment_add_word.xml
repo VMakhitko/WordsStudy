@@ -24,7 +24,7 @@
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/translated_word_text_view"
+        android:id="@+id/translated_word_edit_text"
         android:textAlignment="center"
         app:layout_constraintLeft_toLeftOf="@+id/constraintLayout3"
         app:layout_constraintTop_toBottomOf="@+id/enter_word_edit_text"
@@ -36,9 +36,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/translate_word_button"
-        app:layout_constraintTop_toBottomOf="@+id/translated_word_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/translated_word_edit_text"
         android:layout_marginTop="200dp"
-        app:layout_constraintRight_toLeftOf="@+id/translated_word_text_view"
+        app:layout_constraintRight_toLeftOf="@+id/translated_word_edit_text"
         android:layout_marginEnd="24dp" />
 
     <Button
@@ -46,8 +46,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/add_word_button"
-        app:layout_constraintLeft_toRightOf="@+id/translated_word_text_view"
+        app:layout_constraintLeft_toRightOf="@+id/translated_word_edit_text"
         android:layout_marginStart="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/translated_word_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/translated_word_edit_text"
         android:layout_marginTop="200dp" />
 </android.support.constraint.ConstraintLayout>
