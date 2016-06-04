@@ -1,6 +1,7 @@
 package com.study.wordsstudy;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -22,11 +23,22 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.add_by_text_fl_button) FloatingActionButton addTextButtom;
     @BindView(R.id.add_by_voice_fl_button) FloatingActionButton addVoiceButton;
 
+    FragmentTransaction fragmentTransaction;
+    AddWordFragment addWordFragment;
+    ShowWordFragment showWordFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        showWordFragment = new ShowWordFragment();
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_conteiner, showWordFragment);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.commit();
+
 
         setSupportActionBar(toolbar);
 
@@ -60,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "Add Text Button Clicked");
+                addWordFragment = new AddWordFragment();
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_conteiner, addWordFragment);
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                fragmentTransaction.commit();
             }
         });
 
@@ -67,6 +84,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "Add Voice Button Clicked");
+                /*TODO: Transaction voice fragment*/
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_conteiner, showWordFragment);
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                fragmentTransaction.commit();
             }
         });
     }
