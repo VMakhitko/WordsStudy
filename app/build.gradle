@@ -33,4 +33,5 @@ dependencies {
     apt 'com.jakewharton:butterknife-compiler:8.0.1'
     compile 'com.getbase:floatingactionbutton:1.10.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha2'
+    compile 'com.memetix:microsoft-translator-java-api:0.6.2'
 }

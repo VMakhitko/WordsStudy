@@ -3,6 +3,7 @@ package com.study.wordsstudy;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.study.wordsstudy.db.DbHandler;
+import com.study.wordsstudy.translate.Translator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,5 +52,23 @@ public class AddWordFragment extends Fragment {
                 }
             }
         });
+
+        translateWordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "translatedWord clicked");
+                Translator t = new Translator(enterWord.getText().toString());
+                Thread thread = new Thread(t);
+                thread.start();
+                try {
+                    thread.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                translatedWord.setText(t.getTranslated());
+            }
+        });
     }
+
+
 }
